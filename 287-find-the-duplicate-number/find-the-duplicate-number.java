@@ -1,14 +1,17 @@
+import java.util.HashMap;
+import java.util.Map;
+
 class Solution {
     public int findDuplicate(int[] nums) {
-     Set<Integer> seen = new HashSet<>();
+        Map<Integer, Integer> countMap = new HashMap<>();
 
         for (int num : nums) {
-            if (seen.contains(num)) {
+            if (countMap.containsKey(num)) {
                 return num; // Duplicate found
             }
-            seen.add(num);
+            countMap.put(num, 1);
         }
 
-        return -1;
+        return -1; // Should never happen if input is valid
     }
 }
