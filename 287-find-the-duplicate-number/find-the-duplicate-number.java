@@ -3,7 +3,7 @@ import java.util.Set;
 
 class Solution {
     public int findDuplicate(int[] nums) {
-        Set<Integer> seen = new HashSet<>();
+        Set<Integer> seen = new TreeSet<>();
 
         for (int num : nums) {
             if (!seen.add(num)) {
